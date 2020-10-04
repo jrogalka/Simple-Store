@@ -1,5 +1,5 @@
 <ul>
   <% @products.each do |product| %>
-    <li><%= link_to product.title, product %></li>
+    <li><%= link_to product.title, product %>, <%= product.category.name %></li>
     <% end %>
 </ul>
