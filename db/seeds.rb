@@ -1,10 +1,6 @@
 require "csv"
 
-Product.delete_all
-new_product = Product.create(price: 32.23, stock_quantity: 42)
-
-if new_product.valid?
-  puts "Valid"
-else
-  puts "Invalid"
+676.times do
+  product = Product.create(title: Faker::Commerce.unique.product_name, price: Faker::Commerce.price, stock_quantity: Faker::Number.within(range: 1..100))
+  product.save
 end
